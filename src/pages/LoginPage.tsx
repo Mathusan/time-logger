@@ -80,8 +80,8 @@ export default function Login()
           </Button>
 
           {/* reponse error */}
-          <h6 className={styles.error}>{auth.errMessage}</h6>
-          {<Form.Label>{<Spinner/>}</Form.Label> }
+          <Form.Label className={styles.error}>{auth.errMessage}</Form.Label>
+          {<Form.Label>{loading && <Spinner/>}</Form.Label> }
         </Form> 
       </div>
     </>
