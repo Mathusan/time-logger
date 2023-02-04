@@ -27,10 +27,10 @@ export default function NavBar()
             <Nav.Link href="/" style={{ color: "#0a2f42" }}>Home</Nav.Link>
             
             {isAuthenticated && isAuthenticated ? (
-              <Nav.Link href="/login" onClick={logOut} style={{ color: "#0a2f42" }}>Logout</Nav.Link>
+              <Nav.Link href="/" onClick={logOut} style={{ color: "#0a2f42" }}>Logout</Nav.Link>
             ) : (
                 <>
-                  <Nav.Link href="/login" style={{ color: "#0a2f42" }}>Login</Nav.Link>
+                  <Nav.Link href="/" style={{ color: "#0a2f42" }}>Login</Nav.Link>
                   {/* <Nav.Link href="/register" style={{ color: "#0a2f42" }}>Register</Nav.Link> */}
                 </>
             )}
