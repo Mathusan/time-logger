@@ -10,12 +10,14 @@ import styles from '../styles/Home.module.css';
 import { useDispatch, useSelector } from 'react-redux'
 import { Dispatch } from 'redux';
 import { login } from '../features/auth/authSlice';
+import Spinner from '../components/spinner/Spinner';
 
   
 export default function Login()
 {  
   const navigate = useNavigate();
   const dispatch: Dispatch<any> = useDispatch();
+  const [loading, setLoading] = useState(false);
 
 
   // redux state
@@ -35,7 +37,7 @@ export default function Login()
     // Submit form
   const handleLogin = async (e: any) => {
     e.preventDefault();
-
+    setLoading(true)
     const user: User =
     {
       phone: fields.phone as string,
@@ -43,7 +45,7 @@ export default function Login()
     }
     
     dispatch(login(user));
-
+    setLoading(false)
   };
   
   useEffect(() =>
@@ -79,7 +81,7 @@ export default function Login()
 
           {/* reponse error */}
           <h6 className={styles.error}>{auth.errMessage}</h6>
-
+          {<Form.Label>{loading && <Spinner/>}</Form.Label> }
         </Form> 
       </div>
     </>
