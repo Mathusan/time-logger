@@ -81,7 +81,7 @@ export default function Login()
 
           {/* reponse error */}
           <h6 className={styles.error}>{auth.errMessage}</h6>
-          {<Form.Label>{loading && <Spinner/>}</Form.Label> }
+          {<Form.Label>{<Spinner/>}</Form.Label> }
         </Form> 
       </div>
     </>
