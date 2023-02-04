@@ -10,7 +10,6 @@ import { logout } from '../features/auth/authSlice';
 
 export default function HomePage() {
 
-  window.location.reload()
   const [projects,setProjects] = useState<String[]>([]);
   const [selectedProject, setSelectedProject] = useState('');
   const [inProgress , setInProgress] =  useState(false)
